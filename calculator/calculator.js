@@ -39,14 +39,17 @@ function update() {
 // Given an object of values (a value has amount, years and rate ),
 // calculate the monthly payment.  The output should be a string
 // that always has 2 decimal places.
+// .toFixed() will return value as a string
 function calculateMonthlyPayment(values) {
-  let monthlyRate = (values.rate / 100) / 12.0;
+  let monthlyRate = (values.rate / 100.0) / 12.0; 
   let total_number_of_payments = values.years * 12
   return ((values.amount * monthlyRate) / 
-  (1 - Math.pow((1 + monthlyRate), total_number_of_payments))).toFixed(2);
+  (1 - Math.pow((1 + monthlyRate), -total_number_of_payments))).toFixed(2);
 }
 
 // Given a string representing the monthly payment value,
 // update the UI to show the value.
 function updateMonthly(monthly) {
+	let monthlyUI = document.querySelector('#monthly-payment');
+	monthlyUI.innerText = monthly;
 }
