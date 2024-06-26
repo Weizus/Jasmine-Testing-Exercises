@@ -12,6 +12,14 @@ describe("Servers test (with setup and tear-down)", function() {
   });
 
   afterEach(function() {
-    // teardown logic
+	serverNameInput.value = '';
+	for (let key in allServers) {
+		delete allServers[key]; // deletes from allServers db
+		serverId--; // decrements the counter
+
+		// now to handle html
+		let currServerUI = document.querySelector('tr#' + key);
+		currServerUI.remove();
+	}
   });
 });
