@@ -6,7 +6,7 @@ describe('rates, years, amounts', () => {
 
 describe('results', () => {
 	it("should return a result with 2 decimal places", () => {
-  		expect(+calculateMonthlyPayment({amount : 25000, years : 6, rate : 7})).toBeCloseTo(426.23, 2);
+  		expect(+calculateMonthlyPayment({amount : 25000, years : 6, rate : 7})).toEqual(426.23, 2);
 	})
 });
 
