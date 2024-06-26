@@ -22,11 +22,11 @@ function getCurrentUIValues() {
 // Call a function to calculate the current monthly payment
 function setupIntialValues() {
   let values = {amount : 25000, years : 6, rate : 7}
-  let amountUI = document.querySelector("loan-amount");
+  let amountUI = document.querySelector("#loan-amount");
   amountUI.value = values.amount;
-  let yearsUI = document.querySelector("loan-years");
+  let yearsUI = document.querySelector("#loan-years");
   yearsUI.value = values.years;
-  let rateUI = document.querySelector("loan-rate");
+  let rateUI = document.querySelector("#loan-rate");
   rateUI.value = values.rate;
 }
 
