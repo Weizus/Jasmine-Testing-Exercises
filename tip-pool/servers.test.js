@@ -13,6 +13,10 @@ describe("Servers test (with setup and tear-down)", function() {
 	
   afterEach(function() {
 		serverNameInput.value = '';
+		let key = Object.keys(allServers);
+		let currServerUI = document.querySelector('tr#' + key[0]);
+		currServerUI.remove();
+
 		allServers = {}
 		serverId = 0;
   });
